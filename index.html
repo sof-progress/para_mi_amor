@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sergio & Eluney — San Valentín</title>
+    <meta name="description" content="Una propuesta especial de San Valentín para Sergio y Eluney." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section id="hero" class="hero">
+        <div class="hero__content">
+            <p class="hero__prelude">Una historia de amor</p>
+            <h1 class="hero__names">Sergio <span class="hero__ampersand">&</span> Eluney</h1>
+            <p class="hero__date">Desde el <span>11 . 08 . 2022</span></p>
+
+            <div class="hero__divider">
+                <span class="hero__heart">♥</span>
+            </div>
+
+            <!-- Live Counter -->
+            <div class="counter" id="counter">
+                <div class="counter__unit">
+                    <span class="counter__number" id="counter-years">0</span>
+                    <span class="counter__label">Años</span>
+                </div>
+                <div class="counter__unit">
+                    <span class="counter__number" id="counter-days">0</span>
+                    <span class="counter__label">Días</span>
+                </div>
+                <div class="counter__unit">
+                    <span class="counter__number" id="counter-hours">0</span>
+                    <span class="counter__label">Horas</span>
+                </div>
+                <div class="counter__unit">
+                    <span class="counter__number" id="counter-minutes">0</span>
+                    <span class="counter__label">Minutos</span>
+                </div>
+                <div class="counter__unit">
+                    <span class="counter__number" id="counter-seconds">0</span>
+                    <span class="counter__label">Segundos</span>
+                </div>
+            </div>
+
+            <div class="hero__scroll-hint">
+                <span>Desliza hacia abajo</span>
+                <div class="hero__scroll-arrow">↓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TIMELINE SECTION ============ -->
+    <section id="timeline" class="timeline">
+        <h2 class="timeline__title">Nuestros Momentos</h2>
+        <div class="timeline__line-container">
+            <div class="timeline__line"></div>
+
+            <!-- Milestone 1 -->
+            <article class="timeline-item timeline-item--left">
+                <div class="timeline-item__dot"></div>
+                <div class="timeline-item__card">
+                    <div class="timeline-item__img-wrapper">
+                        <img src="110822.jpeg" alt="Nuestro primer momento juntos" class="timeline-item__img"
+                            loading="lazy" />
+                    </div>
+                    <div class="timeline-item__body">
+                        <time class="timeline-item__date">11 de Agosto, 2022</time>
+                        <p class="timeline-item__text">El día que todo comenzó. Ese primer momento juntos que cambió
+                            todo para siempre.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Milestone 2 -->
+            <article class="timeline-item timeline-item--right">
+                <div class="timeline-item__dot"></div>
+                <div class="timeline-item__card">
+                    <div class="timeline-item__img-wrapper">
+                        <img src="foto2.jpeg" alt="Un momento especial" class="timeline-item__img" loading="lazy" />
+                    </div>
+                    <div class="timeline-item__body">
+                        <time class="timeline-item__date">Un día especial</time>
+                        <p class="timeline-item__text">Cada aventura juntos se convierte en un recuerdo que guardamos
+                            con cariño.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Milestone 3 -->
+            <article class="timeline-item timeline-item--left">
+                <div class="timeline-item__dot"></div>
+                <div class="timeline-item__card">
+                    <div class="timeline-item__img-wrapper">
+                        <img src="foto3.jpeg" alt="Momentos de felicidad" class="timeline-item__img" loading="lazy" />
+                    </div>
+                    <div class="timeline-item__body">
+                        <time class="timeline-item__date">Otro día para recordar</time>
+                        <p class="timeline-item__text">En cada sonrisa tuya encuentro mil razones para amarte un poco
+                            más.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Milestone 4 -->
+            <article class="timeline-item timeline-item--right">
+                <div class="timeline-item__dot"></div>
+                <div class="timeline-item__card">
+                    <div class="timeline-item__img-wrapper">
+                        <img src="foto4.jpeg" alt="Nuestra historia continúa" class="timeline-item__img"
+                            loading="lazy" />
+                    </div>
+                    <div class="timeline-item__body">
+                        <time class="timeline-item__date">Y seguimos escribiendo...</time>
+                        <p class="timeline-item__text">Esta es nuestra historia, y lo mejor aún está por venir.</p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============ CLÍMAX SECTION ============ -->
+    <section id="climax" class="climax">
+        <div class="climax__content">
+            <div class="climax__letter">
+                <div class="climax__letter-decoration">♥</div>
+                <h2 class="climax__heading">Una pregunta para ti</h2>
+                <p class="climax__message">
+                    Cada día a tu lado es un regalo. Cada risa, cada abrazo, cada mirada...
+                    hacen que mi mundo sea más bonito.
+                    Y por eso necesito preguntarte algo...
+                </p>
+                <p class="climax__question">¿Quieres ser mi cita este San Valentín?</p>
+                <button id="btn-accept" class="climax__button">
+                    <span class="climax__button-text">SÍ, ACEPTO</span>
+                    <span class="climax__button-heart">♥</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confetti container -->
+    <div id="confetti-container" class="confetti-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

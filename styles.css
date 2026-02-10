@@ -1,0 +1,603 @@
+/* ===================================================
+   San Valentín — Sergio & Eluney
+   Mobile-first • Romantic • Minimal
+   =================================================== */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  --color-bg:       #FFF8F0;
+  --color-bg-dark:  #FDE8E8;
+  --color-primary:  #DB7093;
+  --color-primary-hover: #C4537A;
+  --color-gold:     #C9A96E;
+  --color-gold-light: #E8D5A8;
+  --color-text:     #4A4A4A;
+  --color-text-light: #7A7A7A;
+  --color-white:    #FFFFFF;
+  --color-card-bg:  #FFFFFF;
+
+  --font-display:   'Playfair Display', Georgia, serif;
+  --font-script:    'Dancing Script', cursive;
+  --font-body:      'Lato', 'Segoe UI', sans-serif;
+
+  --shadow-soft:    0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-card:    0 8px 30px rgba(0, 0, 0, 0.08);
+  --shadow-button:  0 6px 24px rgba(219, 112, 147, 0.35);
+
+  --radius:         16px;
+  --transition:     0.3s ease;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* ===================================================
+   HERO SECTION
+   =================================================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(219,112,147,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(201,169,110,0.06) 0%, transparent 50%),
+    var(--color-bg);
+}
+
+.hero__content {
+  animation: fadeInUp 1.2s ease-out both;
+}
+
+.hero__prelude {
+  font-family: var(--font-script);
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.hero__names {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.hero__ampersand {
+  font-family: var(--font-script);
+  color: var(--color-primary);
+  font-size: 2.2rem;
+  display: inline-block;
+  margin: 0 0.15em;
+  font-weight: 400;
+}
+
+.hero__date {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.hero__date span {
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+/* Divider */
+.hero__divider {
+  margin: 1.8rem auto;
+  width: 60px;
+  height: 1px;
+  background: var(--color-gold-light);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__heart {
+  background: var(--color-bg);
+  padding: 0 10px;
+  color: var(--color-primary);
+  font-size: 1rem;
+  position: relative;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ---------- Counter ---------- */
+.counter {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 1.2s ease-out 0.4s both;
+}
+
+.counter__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-white);
+  border: 1px solid var(--color-gold-light);
+  border-radius: 12px;
+  padding: 0.8rem 0.6rem;
+  min-width: 58px;
+  box-shadow: var(--shadow-soft);
+}
+
+.counter__number {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.counter__label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.35rem;
+}
+
+/* Scroll Hint */
+.hero__scroll-hint {
+  animation: fadeInUp 1.2s ease-out 0.8s both;
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.hero__scroll-arrow {
+  font-size: 1.2rem;
+  margin-top: 0.3rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* ===================================================
+   TIMELINE SECTION
+   =================================================== */
+.timeline {
+  padding: 5rem 1.5rem 4rem;
+  position: relative;
+}
+
+.timeline__title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 3rem;
+}
+
+.timeline__line-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Vertical Line */
+.timeline__line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-gold-light),
+    var(--color-primary),
+    var(--color-gold-light)
+  );
+}
+
+/* Timeline Item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 52px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dot on the line */
+.timeline-item__dot {
+  position: absolute;
+  left: 12px;
+  top: 24px;
+  width: 18px;
+  height: 18px;
+  background: var(--color-primary);
+  border: 3px solid var(--color-white);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--color-primary);
+  z-index: 2;
+}
+
+/* Card */
+.timeline-item__card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.timeline-item__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-item__img-wrapper {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.timeline-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.timeline-item__card:hover .timeline-item__img {
+  transform: scale(1.05);
+}
+
+.timeline-item__body {
+  padding: 1.2rem 1.4rem;
+}
+
+.timeline-item__date {
+  font-family: var(--font-script);
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.timeline-item__text {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ===================================================
+   CLÍMAX SECTION
+   =================================================== */
+.climax {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background: var(--color-bg);
+  transition: background-color 1s ease;
+}
+
+.climax.climax--active {
+  background-color: var(--color-bg-dark);
+}
+
+.climax__content {
+  max-width: 480px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.climax.climax--active .climax__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.climax__letter {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-gold-light);
+  position: relative;
+}
+
+.climax__letter-decoration {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.climax__heading {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 1.2rem;
+}
+
+.climax__message {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.climax__question {
+  font-family: var(--font-script);
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+/* Button */
+.climax__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--color-primary), #E8849E);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 1rem 2.4rem;
+  border-radius: 50px;
+  box-shadow: var(--shadow-button);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.climax__button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  border-radius: inherit;
+}
+
+.climax__button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 35px rgba(219, 112, 147, 0.45);
+}
+
+.climax__button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.climax__button-heart {
+  font-size: 1.2rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ===================================================
+   CONFETTI
+   =================================================== */
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.confetti-heart {
+  position: absolute;
+  top: -5%;
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: confettiFall linear forwards;
+}
+
+/* ===================================================
+   POST-ACCEPT STATE
+   =================================================== */
+.climax__button.accepted {
+  background: linear-gradient(135deg, var(--color-gold), #D4B76A);
+  pointer-events: none;
+}
+
+.climax__after-message {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  margin-top: 1.5rem;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+/* ===================================================
+   KEYFRAMES
+   =================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes confettiFall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg) scale(0.3);
+  }
+}
+
+/* ===================================================
+   RESPONSIVE — TABLET & DESKTOP
+   =================================================== */
+@media (min-width: 768px) {
+  .hero__names {
+    font-size: 4rem;
+  }
+
+  .hero__ampersand {
+    font-size: 3.2rem;
+  }
+
+  .hero__prelude {
+    font-size: 1.5rem;
+  }
+
+  .counter {
+    gap: 1rem;
+  }
+
+  .counter__unit {
+    min-width: 80px;
+    padding: 1rem 0.8rem;
+  }
+
+  .counter__number {
+    font-size: 2rem;
+  }
+
+  .counter__label {
+    font-size: 0.7rem;
+  }
+
+  /* Timeline: center the line and alternate cards */
+  .timeline {
+    padding: 6rem 2rem 5rem;
+  }
+
+  .timeline__title {
+    font-size: 2.2rem;
+    margin-bottom: 4rem;
+  }
+
+  .timeline__line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    width: 50%;
+    padding-left: 0;
+    margin-bottom: 4rem;
+  }
+
+  .timeline-item--left {
+    padding-right: 40px;
+    text-align: right;
+  }
+
+  .timeline-item--right {
+    margin-left: 50%;
+    padding-left: 40px;
+    text-align: left;
+  }
+
+  .timeline-item--left .timeline-item__dot {
+    left: auto;
+    right: -9px;
+  }
+
+  .timeline-item--right .timeline-item__dot {
+    left: -9px;
+  }
+
+  .timeline-item__body {
+    padding: 1.5rem 1.8rem;
+  }
+
+  /* Clímax */
+  .climax__letter {
+    padding: 3rem 2.5rem;
+  }
+
+  .climax__question {
+    font-size: 2rem;
+  }
+
+  .climax__button {
+    font-size: 1.2rem;
+    padding: 1.2rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__names {
+    font-size: 5rem;
+  }
+
+  .timeline__line-container {
+    max-width: 900px;
+  }
+}
